@@ -10,7 +10,7 @@ public class CompanyEmpWage {
         final int MAX_WORKING_HRS;
         int totalWage;
 
-        CompanyEmpWage(String companyName, int WAGE_PER_HR, int MAX_WORKING_DAYS, int MAX_WORKING_HRS)
+        public CompanyEmpWage(String companyName, int WAGE_PER_HR, int MAX_WORKING_DAYS, int MAX_WORKING_HRS)
         {
             this.companyName=companyName;
             this.WAGE_PER_HR=WAGE_PER_HR;
