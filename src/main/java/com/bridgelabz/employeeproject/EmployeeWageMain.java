@@ -36,13 +36,13 @@ public class EmployeeWageMain {
             }
             System.out.println("Total wage for a month of "+ company+ " employee is " + totalWage);
         }
-
-        public static void main( String[] args ){
-            System.out.println( "Welcome to Employee Wage Computation Program" );
-            calculateTotalWage("Amazon", 20,16, 150);
-            calculateTotalWage("Flipkart",40,20,100);
-            calculateTotalWage("Nykaa",30,15,100);
-            calculateTotalWage("Big Bazaar",20,20,200);
-            calculateTotalWage("Dmart", 25,25, 150);
-        }
+    public static void main( String[] args )
+    {
+        System.out.println( "Welcome to Employee Wage Computation Program" );
+        calculateTotalWage("Amazon", 20,16, 150);
+        calculateTotalWage("Flipkart",40,20,100);
+        calculateTotalWage("Nykaa",30,15,100);
+        calculateTotalWage("Big Bazaar",20,20,200);
+        calculateTotalWage("Dmart", 25,25, 150);
     }
+}
