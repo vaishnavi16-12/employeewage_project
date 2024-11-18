@@ -3,8 +3,7 @@ package com.bridgelabz.employeeproject;
 public class EmployeeWageMain {
 
     public static void calculateTotalWage(String company, int WAGE_PER_HR, int MAX_WORKING_DAYS, int MAX_WORKING_HRS)
-    {
-        final int FULL_TIME = 2;
+    {final int FULL_TIME = 2;
         final int PART_TIME = 1;
         int totalWage = 0;
         int workingHours = 0;
