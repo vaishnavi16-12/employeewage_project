@@ -1,5 +1,8 @@
 package com.bridgelabz.employeeproject;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+
 public class EmpWageBuilder implements CalculateEmpWage  {
 
 
@@ -18,9 +21,11 @@ public class EmpWageBuilder implements CalculateEmpWage  {
 
             for (CompanyEmpWage cew : emp.empWages) {
                 emp.calculateTotalWage(cew);
-            }
-            for (CompanyEmpWage cew : emp.empWages) {
-                System.out.println(cew);
+
+                System.out.println("........Daily Wages.......");
+                for (String k : cew.totalWagesRecord.keySet()) {
+                    System.out.println(k + ": " + cew.totalWagesRecord.get(k));
+                }
             }
 
         }
@@ -31,13 +36,19 @@ public class EmpWageBuilder implements CalculateEmpWage  {
             int wage = 0;
             int workingHours = 0;
             int workingDays = 0;
+            Map<String, Long> dailyWages=new HashMap<String, Long>();
             while (workingDays < companyEmpWages.MAX_WORKING_HRS && workingHours < companyEmpWages.MAX_WORKING_DAYS) {
                 workingDays++;
                 if (companyEmpWages.employeePresent()) {
                     workingHours += companyEmpWages.fullTimeHour;
                     wage =  companyEmpWages.WAGE_PER_HR;
+                    dailyWages.put("Day" + workingDays,(long) companyEmpWages.WAGE_PER_HR);
+                }
+                else {
+                    dailyWages.put("Day"+workingDays,(long)0);
                 }
             }
             companyEmpWages.setTotalMonthlyWage(wage);
+            companyEmpWages.setTotalWagesRecord(dailyWages);
         }
     }
